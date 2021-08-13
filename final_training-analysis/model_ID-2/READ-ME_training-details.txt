@@ -1,0 +1,44 @@
+HERA Auto-Correlation GAN Training Run ID-2 
+Time of Execution: 08/10/2021 10:55:04 
+Code written and ran by Joseph C. Shy 
+Code executed from Commit - 3871007c7b39f3c55ce264edac4f6beaf5d6af6b. Neural Network inputs are documented below. 
+
+The folder 'training-snapshots' contains random generator output every 50 epochs. 
+The folder 'training-performance' shows various losses and accuracies of the model training. They can be used to analyze the validity and fit of the models created.
+
+Manually Input Comments
+-----------------------
+
+
+Data and Code Version Reference 
+--------------------------------
+The notebook used to generate this model is 'HERA-GAN_joseph-shy_memo'.
+The auto-correlation ("ee") training set was randomly chosen from all good antennas flagged on the night of 2459122 for all integration time files located in the H4C directory in HERA lustre. 
+Reference the text files in the parent directory for filepaths to auto-correlation data and good/bad antenna categorization.
+The training set is grabbed from '2459122_good_auto-corrs_train.npy'.
+The validation set is grabbed from '2459122_good_auto-corrs_valid.npy'.
+The test set is grabbed from '2459122_good_auto-corrs_test.npy'.
+All `REAL` data is input with median normalization applied.
+To create the '.npy' files mentioned above, refer to 'download-training-data_joseph-shy_HERA-GAN.ipynb' jupyter notebook.
+
+
+Training/Model Comments 
+-----------------------
+This is a training run of the auto-correlation training on the "ee" data from night of 2459122.
+It is a final run, using the ficed-point (of 5e6 V^2) pre-processing technique. 
+Please refer to 'HERA-GAN_joseph-shy_memo.ipynb' jupyter notebook for details into the model architectures/hyperparameters.
+ 
+
+Training Input Parameters: 
+--------------------------
+Latent Dimensions = 22 
+Frequency Channels = 1536 
+Total Epochs in this run = 10000 
+Batch Size = 128 
+Gan-to-Detector Training Ratio per Epoch = 1 
+
+The '.h5' files contain the final models and their weights after the last epoch of training. The directory, 'model-save' contains trained models from every 500 epochs (in case future work is done with intermediate models or model overfits after a certain amount of epochs), but it is not tracked in the Github associated. 
+The '*_summary.txt' files are the summaries of the layers of each model seen as a result of the command 'model.summary()'. 
+The '*_visual.png' files are the flow chart plots of the layers of each model. It is helpful, as it includes the input shape of each model (while the '*_summary.txt' does not). The flow chart for the GAN is not present, as it its architecture is not compatible with the function that produces the visuals. 
+
+All directories (aside from 'model-save') contain their own READ-ME files.

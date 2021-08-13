@@ -1,0 +1,8 @@
+HERA Auto-Correlation GAN Training Run ID-2 
+Time of Execution: 08/10/2021 10:55:04 
+Code written and ran by Joseph C. Shy 
+Code executed from Commit - 3871007c7b39f3c55ce264edac4f6beaf5d6af6b 
+-------------------------------------------------- 
+
+This directory contains a random generator output overlaid atop a random REAL auto-correlation. 
+Each plot marks 25 training epochs of progress. It ranges from 1 epoch of training to 10000
