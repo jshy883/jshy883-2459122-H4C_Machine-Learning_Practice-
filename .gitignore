@@ -1,4 +1,5 @@
 .ipynb_checkpoints
-*/.ipynb_checkpoints/*
 model.png
 *.npy
+final_training-analysis/model_ID-*/model-save/*
+prelim_training-analysis/
